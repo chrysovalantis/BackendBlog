@@ -14,6 +14,8 @@ const readArticleRouter = require('./routes/articles/read');
 const updatArticleeBlogRouter = require('./routes/articles/update');
 const deleteArticleRouter = require('./routes/articles/delete');
 
+const publishArticleRouter = require('./routes/publish/publish');
+
 const app = express();
 
 app.use(express.json());
@@ -33,6 +35,8 @@ app.use(createArticleRouter);
 app.use(readArticleRouter);
 app.use(updatArticleeBlogRouter);
 app.use(deleteArticleRouter);
+
+app.use(publishArticleRouter);
 
 
 app.all('*', async (req,res) => {

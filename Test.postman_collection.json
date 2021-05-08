@@ -1,0 +1,349 @@
+{
+	"info": {
+		"_postman_id": "3f9b2a9a-be5e-4548-801f-bef267bcfbf1",
+		"name": "Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "NewWriter",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Giannis\",\r\n    \"age\": 12,\r\n    \"email\": \"test1@test.com\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:4000/api/writer",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"writer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetWriter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/api/writer/test1@test.com",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"writer",
+						"test1@test.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateWriter",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"kostas\",\r\n    \"age\": 22\r\n}"
+				},
+				"url": {
+					"raw": "localhost:4000/api/writer/test1@test.com",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"writer",
+						"test1@test.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteWriter",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/api/writer/test1@test.com",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"writer",
+						"test1@test.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "NewBlog",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Giannis Blog\",\r\n    \"articles\": []\r\n}"
+				},
+				"url": {
+					"raw": "localhost:4000/api/blog",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"blog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBlog",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/api/blog/6096645bcbd4b2001f4cdf42",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"blog",
+						"6096645bcbd4b2001f4cdf42"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateBlog",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"No Giannis Blog\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:4000/api/blog/60965470566b45001eb808d1",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"blog",
+						"60965470566b45001eb808d1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteBlog",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/api/blog/60965470566b45001eb808d1",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"blog",
+						"60965470566b45001eb808d1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NewArticle",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"New Article\",\r\n  \"excerpt\": \"String\",\r\n  \"text\": \"String\",\r\n  \"date_created\": \"2012-02-02\",\r\n  \"date_updated\": \"2012-02-03\",\r\n  \"writer\": \"60964a5ddd8112001ff8508a\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:4000/api/article",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"article"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetArticle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/api/article/6096635acbd4b2001f4cdf41",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"article",
+						"6096635acbd4b2001f4cdf41"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateArticle",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"New Article\",\r\n  \"excerpt\": \"Not String Dude\",\r\n  \"text\": \"Not text\",\r\n  \"date_created\": \"2012-02-02\",\r\n  \"date_updated\": \"2012-02-03\",\r\n  \"writer\": \"60964a5ddd8112001ff8508a\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/api/article/609660f0fa3d55001eabd27e",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"article",
+						"609660f0fa3d55001eabd27e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteArticle",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/api/article/609660f0fa3d55001eabd27e",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"article",
+						"609660f0fa3d55001eabd27e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PublishArticle",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"articleId\": \"6096635acbd4b2001f4cdf41\",\r\n    \"blogIds\": [\"6096645bcbd4b2001f4cdf42\"]\r\n}"
+				},
+				"url": {
+					"raw": "localhost:4000/api/publish",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"publish"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

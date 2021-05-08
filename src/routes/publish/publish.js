@@ -1,6 +1,6 @@
 const express = require('express');
 const Blog = require('../../models/blog');
-const Article = require('../../models/blog');
+const Article = require('../../models/article');
 const { body, validationResult } = require('express-validator');
 
 const router = express.Router();
@@ -36,10 +36,10 @@ router.post(
       return res.status(404).send( {"Message": "Blog not found"});
     }
     
-    blogIds.forEach(id => {
+    blogIds.forEach(async id => {
       var findBlog = null;
       try{
-        findBlog = await Blog.find({
+        findBlog = await Blog.findOne({
           _id: id,
         });
       } catch (err){
@@ -49,6 +49,8 @@ router.post(
       if(!findBlog){
         return res.status(404).send( {"Message": "Blog not found"});
       }
+
+      console.log(findBlog);
 
       findBlog.articles.push(id);
 
@@ -60,7 +62,7 @@ router.post(
 
     });
 
-    res.status(200).send({ 'Message: ': findBlog });
+    res.status(200).send({ 'Message: ': "Article Published" });
   }
 );
 
