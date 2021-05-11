@@ -25,15 +25,17 @@ router.post(
 
     var findArticle = null;
     try{
-      findArticle = await Article.find({
+      findArticle = await Article.findOne({
         _id: articleId,
       });
     } catch (err){
       console.err(err);
     }
     
+    console.log(findArticle);
+
     if(!findArticle){
-      return res.status(404).send( {"Message": "Blog not found"});
+      return res.status(404).send( {"Message": "Article not found"});
     }
     
     blogIds.forEach(async id => {
@@ -52,7 +54,7 @@ router.post(
 
       console.log(findBlog);
 
-      findBlog.articles.push(id);
+      findBlog.articles.push(findArticle._id);
 
       try {
         await findBlog.save();

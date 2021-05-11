@@ -9,8 +9,6 @@ router.put(
   body('title').not().isEmpty().withMessage('Title must be provided'),
   body('excerpt').not().isEmpty().withMessage('excerpt must be provided'),
   body('text').not().isEmpty().withMessage('Text must be provided'),
-  body('date_created').not().isEmpty().withMessage('Date created must be provided'),
-  body('date_updated').not().isEmpty().withMessage('Date updated must be provided'),
   body('writer').not().isEmpty().withMessage('Writer must be provided'),
   param('id').not().isEmpty().withMessage('ID must be provided'),
   async (req, res) => {
@@ -18,7 +16,7 @@ router.put(
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    const { title, excerpt, text, date_created, date_updated, writer } = req.body;
+    const { title, excerpt, text, writer } = req.body;
     const id  = req.params.id;
 
     var article = null;
@@ -40,8 +38,7 @@ router.put(
     article.title = title;
     article.excerpt = excerpt;
     article.text = text;
-    article.date_created = date_created;
-    article.date_updated = date_updated;
+    article.date_updated = new Date();
     article.writer = writer;
 
     try {

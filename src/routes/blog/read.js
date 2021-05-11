@@ -20,7 +20,7 @@ router.get(
     try{
       findBlog = await Blog.find({
         _id: id,
-      }).populate('Article');
+      }).populate('articles').exec();
     } catch (err){
       console.err(err);
     }
